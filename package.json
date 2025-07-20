@@ -1,7 +1,7 @@
 {
-  "name": "icinema",
+  "name": "mycinema",
   "version": "1.0.0",
-  "description": "Website for movie theaters.",
+  "description": "Cinema Booking Website",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -14,7 +14,7 @@
     "build-frontend": "npm run setup-frontend && cd frontend && npm run build",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build-frontend"
   },
-  "author": "Orif Milod",
+  "author": "Your Name",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -39,8 +39,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  },
-  "engines": {
-    "node": "10.14.2"
   }
 }

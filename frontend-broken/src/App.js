@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import {
   Route,
+  Redirect,
+  Switch,
   BrowserRouter as Router,
-  Routes,
-  Navigate,
 } from "react-router-dom";
 
 import Movies from "./pages/Movies";
@@ -12,6 +12,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+// import MovieForm from './components/movieForm';
 
 import "./App.css";
 
@@ -25,13 +26,14 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navbar />
-            <Routes>
-              <Route path="/movies/new" element={<AddMovieForm />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/movies" element={<Movies />} />
-              <Route path="/" element={<Navigate to="/movies" replace />} />
-            </Routes>
+            <Switch>
+              <Route exact path="/movies/new" component={AddMovieForm} />
+              <Route exact path="/login" component={Login} />
+              <Route path="/resigter" component={Register} />
+              <Route path="/movies" exact component={Movies} />
+
+              <Redirect exact from="/" to="/movies" />
+            </Switch>
             <Footer />
           </div>
         </Router>
